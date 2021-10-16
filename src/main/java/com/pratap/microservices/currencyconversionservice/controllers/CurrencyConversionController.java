@@ -38,8 +38,8 @@ public class CurrencyConversionController {
         CurrencyConversionResponseModel currencyConversionResponseModel = new CurrencyConversionResponseModel(currencyExchangeResponseModel.getId(),
                 from, to, quantity, currencyExchangeResponseModel.getConversionMultiple(),
                 quantity.multiply(currencyExchangeResponseModel.getConversionMultiple()));
-        String port = environment.getProperty("local.server.port");
-        currencyConversionResponseModel.setEnvironment(port);
+//        String port = environment.getProperty("local.server.port");
+        currencyConversionResponseModel.setEnvironment(currencyExchangeResponseModel.getEnvironment());
         return currencyConversionResponseModel;
     }
 }
